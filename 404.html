@@ -2,14 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Redirecting...</title>
+    <title>Redirecting to Release...</title>
     <script>
-        // 当 netboot.xyz 请求 sources/boot.wim 触发 404 时，将其强行重定向到 Releases 真实下载地址
-        if (window.location.pathname.endsWith('sources/boot.wim')) {
+        // 将请求路径转为小写，防止大小写不一致
+        var path = window.location.pathname.toLowerCase();
+        
+        // 只要检测到请求包含 sources/boot.wim
+        if (path.indexOf('sources/boot.wim') !== -1) {
+            // 立刻重定向到你预先上传好的 GitHub Release 真大文件直链
             window.location.href = 'https://github.com/kers701/win11/releases/download/v1.0/boot.wim';
         }
     </script>
 </head>
 <body>
+    <p>Redirecting to boot.wim...</p>
 </body>
 </html>
