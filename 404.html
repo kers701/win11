@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // 当 netboot.xyz 请求 sources/boot.wim 触发 404 时，将其强行重定向到 Releases 真实下载地址
+        if (window.location.pathname.endsWith('sources/boot.wim')) {
+            window.location.href = 'https://github.com/kers701/win11/releases/download/v1.0/boot.wim';
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>
